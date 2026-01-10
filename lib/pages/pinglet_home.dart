@@ -4,8 +4,8 @@ import 'package:pinglet/pages/setting.dart' show SettingPage;
 import '../widget/contact_list.dart';
 import '../widget/tab.dart';
 
-class pinglet_home extends StatelessWidget {
-  const pinglet_home({super.key});
+class PingletHome extends StatelessWidget {
+  const PingletHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class pinglet_home extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/image/pin.jpg'),
+                image: AssetImage('assets/images/pin.jpg'),
                 fit: BoxFit.cover,
               ),
             ),

@@ -11,7 +11,7 @@ class SettingPage extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/image/pin.jpg'),
+                image: AssetImage('assets/images/pin.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
