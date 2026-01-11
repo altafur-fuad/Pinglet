@@ -9,6 +9,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Pinglet', home: PingletHome());
+    return MaterialApp(home: const PingletHome());
   }
 }

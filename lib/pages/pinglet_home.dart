@@ -20,7 +20,7 @@ class PingletHome extends StatelessWidget {
               ),
             ),
           ),
-          Container(color: Colors.black.withOpacity(0.7)),
+          Container(color: Colors.black.withOpacity(0.6)),
           SafeArea(
             child: Column(
               children: [
