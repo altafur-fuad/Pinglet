@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinglet/pages/inbox.dart';
 import 'package:pinglet/pages/setting.dart' show SettingPage;
 
 import '../widget/contact_list.dart';
@@ -65,7 +66,15 @@ class PingletHome extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     itemCount: 100,
                     itemBuilder: (context, index) {
-                      return ContactList();
+                      return InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (_) => InboxPage()),
+                          );
+                        },
+                        child: ContactList(),
+                      );
                     },
                   ),
                 ),

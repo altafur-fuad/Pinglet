@@ -21,7 +21,7 @@ class ContactList extends StatelessWidget {
           ),
           SizedBox(width: 12),
           Expanded(
-            child: Text('', style: TextStyle(color: Colors.white)),
+            child: Text('Hala Madrid', style: TextStyle(color: Colors.white)),
           ),
         ],
       ),
