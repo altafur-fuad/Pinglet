@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinglet/controller/background_controller.dart';
 
 class InboxPage extends StatelessWidget {
   const InboxPage({super.key});
@@ -8,14 +9,20 @@ class InboxPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/pin.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
+          ValueListenableBuilder(
+            valueListenable: backgroundImage,
+            builder: (context, value, child) {
+              return Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(value),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              );
+            },
           ),
+
           Container(color: Colors.black.withOpacity(0.7)),
         ],
       ),
