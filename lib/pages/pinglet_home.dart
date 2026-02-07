@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pinglet/pages/inbox.dart';
-import 'package:pinglet/pages/setting.dart' show SettingPage;
+import 'package:pinglet/controller/background_controller.dart';
 
 import '../widget/contact_list.dart';
 import '../widget/tab.dart';
@@ -13,13 +12,18 @@ class PingletHome extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/pin.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
+          ValueListenableBuilder(
+            valueListenable: backgroundImage,
+            builder: (context, value, child) {
+              return Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(value),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              );
+            },
           ),
           Container(color: Colors.black.withOpacity(0.6)),
           SafeArea(
@@ -68,10 +72,7 @@ class PingletHome extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (_) => InboxPage()),
-                          );
+                          Navigator.pushNamed(context, '/inbox');
                         },
                         child: ContactList(),
                       );
@@ -101,12 +102,7 @@ class PingletHome extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => const SettingPage(),
-                            ),
-                          );
+                          Navigator.pushNamed(context, '/settings');
                         },
                         child: const Icon(
                           Icons.settings,

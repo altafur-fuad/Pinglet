@@ -57,8 +57,8 @@ class SettingPage extends StatelessWidget {
                         backgroundImage.value = bg;
                       },
                       child: Container(
-                        width: 100,
-                        height: 150,
+                        width: 50,
+                        height: 100,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.white),
                           image: DecorationImage(
@@ -69,6 +69,27 @@ class SettingPage extends StatelessWidget {
                       ),
                     );
                   }).toList(),
+                ),
+
+                const SizedBox(height: 48),
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        '/',
+                        (route) => false,
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.redAccent,
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      minimumSize: const Size(double.infinity, 50),
+                    ),
+                    child: const Text('Log Out'),
+                  ),
                 ),
               ],
             ),
